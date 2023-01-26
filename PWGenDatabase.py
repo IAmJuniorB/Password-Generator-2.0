@@ -14,6 +14,12 @@ conn.execute('''CREATE TABLE IF NOT EXISTS passwords
 # Insert the generated password into the table
 conn.execute("INSERT INTO passwords (length, password, date_generated) VALUES (?, ?, datetime('now'))", (passlen.get(), passstr.get()))
 
+conn = sqlite3.connect('passwords.db')
+c = conn.cursor()
+
+c.execute("SELECT * from passwords")
+print(c.fetchall())
+
 # Commit the changes and close the connection
 conn.commit()
 conn.close()
