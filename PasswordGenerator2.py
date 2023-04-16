@@ -4,7 +4,6 @@ import string
 import secrets
 import pyperclip
 import random
-from tkinter import ttk
 
 root = Tk()
 
