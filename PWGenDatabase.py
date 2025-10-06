@@ -6,10 +6,10 @@ conn = sqlite3.connect('passwords.db')
 
 # Create a table to store the passwords
 conn.execute('''CREATE TABLE IF NOT EXISTS passwords
-             (id INTEGER PRIMARY KEY, 
-             length INTEGER,
-             password TEXT,
-             date_generated DATE)''')
+            (id INTEGER PRIMARY KEY, 
+            length INTEGER,
+            password TEXT,
+            date_generated DATE)''')
 
 # Insert the generated password into the table
 conn.execute("INSERT INTO passwords (length, password, date_generated) VALUES (?, ?, datetime('now'))", (passlen.get(), passstr.get()))
